@@ -26,6 +26,17 @@ def create_snippet_documentation(snippet_data):
 
 def add_documentation(snippet_documentation, output_file):
     """Add the complete documentation to the end of the output file."""
+    snippet_docs_heading = "\n## Available Snippets\n"
+
+    # split the snippets up
+    sorted_snippets = snippet_documentation.split("\n")
+    # sort the documentation alphabetically
+    sorted_snippets.sort()
+
+    # recreate the documentation with a heading and sorted snippet docs
+    snippet_documentation = snippet_docs_heading + "\n".join(sorted_snippets)
+
+    # append the documentation to the output file
     with open(output_file, 'a') as f:
         f.write(snippet_documentation)
 
@@ -71,7 +82,7 @@ def get_snippet_data(parsed_snippet):
 def main():
     """Document sublime text snippets."""
     args = parse_arguments()
-    complete_snippets_documentation = "\n\n## Available Snippets\n\n"
+    complete_snipppet_documentation = str()
 
     # find all sublime snippets in the input directory
     sublime_snippets = find_sublime_snippets(args.input_directory)
@@ -83,10 +94,9 @@ def main():
         # create documentation from the given data
         snippet_documentation = create_snippet_documentation(snippet_data)
 
-        # add the new documentation to the complete documentation
-        complete_snippets_documentation += snippet_documentation
+        complete_snipppet_documentation += snippet_documentation
 
-    add_documentation(complete_snippets_documentation, args.output_file)
+    add_documentation(complete_snipppet_documentation, args.output_file)
 
 
 if __name__ == '__main__':

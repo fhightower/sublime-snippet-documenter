@@ -23,6 +23,7 @@ def test_find_xml_children():
     """Find the children in the snippet."""
     snippets = sublime_snippet_documenter.find_sublime_snippets(
         './tests/test_files/')
+    complete_snippet_documentation = str()
 
     # make sure we found the (one) testing snippet
     assert len(snippets) == 1
@@ -47,12 +48,11 @@ def test_find_xml_children():
         print("Snippet docs: {}".format(snippet_docs))
         assert snippet_docs == "- `dictcount`: Test description\n"
 
-        complete_snippet_documentation = "\n\n## Available Snippets\n\n"
         complete_snippet_documentation += snippet_docs
 
-        # write the snippet documentation to the output file
-        sublime_snippet_documenter.add_documentation(
-            complete_snippet_documentation, './tests/test_files/README.md')
+    # write the snippet documentation to the output file
+    sublime_snippet_documenter.add_documentation(
+        complete_snippet_documentation, './tests/test_files/README.md')
 
     # rest the readme used for testing
     reset_test_readme()
