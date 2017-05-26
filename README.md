@@ -2,7 +2,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/sublime_snippet_documenter.svg)](https://pypi.python.org/pypi/sublime_snippet_documenter)
 [![Build Status](https://travis-ci.org/fhightower/sublime_snippet_documenter.svg?branch=master)](https://travis-ci.org/fhightower/sublime_snippet_documenter)
-[![codecov](https://codecov.io/gh/fhightower/onemillion/branch/master/graph/badge.svg)](https://codecov.io/gh/fhightower/onemillion)
+[![codecov](https://codecov.io/gh/fhightower/sublime_snippet_documenter/branch/master/graph/badge.svg)](https://codecov.io/gh/fhightower/sublime_snippet_documenter)
 [![Documentation Status](https://readthedocs.org/projects/sublime-snippet-documenter/badge/?version=latest)](http://sublime-snippet-documenter.readthedocs.io/en/latest/?badge=latest)
 [![Updates](https://pyup.io/repos/github/fhightower/sublime_snippet_documenter/shield.svg)](https://pyup.io/repos/github/fhightower/sublime_snippet_documenter/)
 

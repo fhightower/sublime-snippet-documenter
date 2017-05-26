@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+for i in incoming_list:
+    if i in dictionary.keys():
+        dictionary[i] = dictionary[i] + 1
+    else:
+        dictionary[i] = 1
+]]></content>
+    <tabTrigger>dictcount</tabTrigger>
+    <scope>source.python</scope>
+    <description>Test description</description>
+</snippet>
