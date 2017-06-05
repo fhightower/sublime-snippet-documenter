@@ -26,7 +26,7 @@ def create_snippet_documentation(snippet_data):
 
 def add_documentation(snippet_documentation, output_file):
     """Add the complete documentation to the end of the output file."""
-    snippet_docs_heading = "\n## Available Snippets\n"
+    snippet_docs_heading = "\n\n## Available Snippets\n"
 
     # split the snippets up
     sorted_snippets = snippet_documentation.split("\n")
@@ -35,6 +35,9 @@ def add_documentation(snippet_documentation, output_file):
 
     # recreate the documentation with a heading and sorted snippet docs
     snippet_documentation = snippet_docs_heading + "\n".join(sorted_snippets)
+
+    # add a newline at the end of the snippet docs section
+    snippet_documentation += "\n"
 
     # append the documentation to the output file
     with open(output_file, 'a') as f:
