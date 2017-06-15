@@ -20,6 +20,9 @@ sublime_snippet_documenter
      :target: https://pyup.io/repos/github/fhightower/sublime_snippet_documenter/
      :alt: Updates
 
+.. image:: https://www.quantifiedcode.com/api/v1/project/2dd983ae22ed4dc198eba479afd388ec/badge.svg
+  :target: https://www.quantifiedcode.com/app/project/2dd983ae22ed4dc198eba479afd388ec
+  :alt: Code issues
 
 Package for quickly documenting Sublime Text snippets.
 
