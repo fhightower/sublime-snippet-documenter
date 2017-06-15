@@ -9,6 +9,7 @@ SNIPPET_DOCS_MARKDOWN_TEMPLATE = "- `{}`: {}\n"
 
 
 def parse_arguments():
+    """Parse the command-line arguments."""
     parser = argparse.ArgumentParser(description='Create documentation for ' +
                                                  'sublime text snippets.')
     parser.add_argument('input_directory', help='input directory')
