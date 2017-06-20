@@ -8,21 +8,38 @@ test_sublime_snippet_documenter
 Tests for `sublime_snippet_documenter` module.
 """
 
+import os
+
+import pytest
+
 from sublime_snippet_documenter import sublime_snippet_documenter
 
 
-def reset_test_readme():
+@pytest.fixture
+def readme_path():
+    """Return the absolute path to the readme used in the tests."""
+    return os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                        './test_files/README.md'))
+
+
+@pytest.fixture
+def snippets_path():
+    """Return the absolute path to the test snippets."""
+    return os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                        './test_files/'))
+
+
+def reset_test_readme(readme_path):
     """Reset the readme used for testing to its original state."""
     output = "# Test Readme\n\n## Usage\n\nTesting\n\n## Contributions\n\nTest"
 
-    with open('./tests/test_files/README.md', 'w') as f:
+    with open(readme_path, 'w') as f:
         f.write(output)
 
 
-def test_find_xml_children():
+def test_find_xml_children(readme_path, snippets_path):
     """Find the children in the snippet."""
-    snippets = sublime_snippet_documenter.find_sublime_snippets(
-        './tests/test_files/')
+    snippets = sublime_snippet_documenter.find_sublime_snippets(snippets_path)
     complete_snippet_documentation = str()
 
     # make sure we found the (one) testing snippet
@@ -52,7 +69,7 @@ def test_find_xml_children():
 
     # write the snippet documentation to the output file
     sublime_snippet_documenter.add_documentation(
-        complete_snippet_documentation, './tests/test_files/README.md')
+        complete_snippet_documentation, readme_path)
 
     # rest the readme used for testing
-    reset_test_readme()
+    reset_test_readme(readme_path)
