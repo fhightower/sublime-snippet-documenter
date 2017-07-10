@@ -2,6 +2,10 @@
 sublime_snippet_documenter
 ===============================
 
+.. image:: https://api.codacy.com/project/badge/Grade/5df141cdc31c40ab92cfa3c79c571bcd
+   :alt: Codacy Badge
+   :target: https://www.codacy.com/app/fhightower/sublime_snippet_documenter?utm_source=github.com&utm_medium=referral&utm_content=fhightower/sublime_snippet_documenter&utm_campaign=badger
+
 
 .. image:: https://img.shields.io/pypi/v/sublime_snippet_documenter.svg
         :target: https://pypi.python.org/pypi/sublime_snippet_documenter
